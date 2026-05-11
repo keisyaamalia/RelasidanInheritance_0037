@@ -18,3 +18,17 @@ public:
 };
 
 int User::globalId = 0;
+
+class Member : public User {
+public:
+    bool status;
+    
+    Member(string n, string e, bool s = true) : User(n, e), status(s) {}
+    
+    void showProfile() {
+        cout << "\n=== PROFILE MEMBER ===" << endl;
+        cout << "ID: " << id << ", Nama: " << nama 
+             << ", Email: " << email 
+             << ", Status: " << (status ? "AKTIF" : "NON-AKTIF") << endl;
+    }
+};
